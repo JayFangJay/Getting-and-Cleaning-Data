@@ -47,10 +47,10 @@ colnames(subj) <- 'subject'
 
 # Appropriately labels the data set with descriptive activity names.
 data <- cbind(subj, x.mean.sd, y)
-write.table(data, './Project/merged.txt')
+write.table(data, './Project/merged.txt',row.names=FALSE)
 
 
 
 # Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 average <- aggregate(x=x, by = list(activities = y$activity, subj = subj$subject), mean)
-write.table(average, './Project/average.txt')
+write.table(average, './Project/average.txt',row.names=FALSE)
